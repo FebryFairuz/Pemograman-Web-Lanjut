@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Chat from "../page/Chat";
 
 export class Layout extends Component {
     render() {
@@ -44,7 +45,12 @@ export class Layout extends Component {
 
                 <div className="container-fluid">
                     <main className="flex-shrink-0">
-                        uhuy
+                        <div className="container">
+                            <div style={{marginTop:"100px"}}>
+                                <Chat />
+                            </div>
+                        </div>
+                        
                     </main>
                 </div>
 
