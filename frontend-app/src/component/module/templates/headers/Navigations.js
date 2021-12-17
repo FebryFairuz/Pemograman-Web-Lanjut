@@ -2,9 +2,10 @@ import React, {useState} from 'react'
 import NavItem from "./NavItem";
 
 export function Navigations() {
-    const [menu,setMenu] = useState([{"name":"Notifications","icon":"fa-globe","url":"/notifications"},
+    const [menu,setMenu] = useState([{"name":"Home","icon":"fa-home","url":"/"},
                                      {"name":"Messages","icon":"fa-envelope-o","url":"/messages"},
                                      {"name":"Profile","icon":"fa-user-o","url":"/profile"},
+                                     {"name":"Sign Out","icon":"fa-sign-out","url":"/sign-out"},
                                     ]);
     return (
         <nav className="navbar navbar-expand-md navbar-dark fixed-top"  style={{backgroundColor:"#7952b3"}}>

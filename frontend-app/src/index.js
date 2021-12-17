@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import {createStore} from 'redux';
 import './index.css';
 import App from './App';
-import Layout from "./component/module/templates/Layout";
-import reportWebVitals from './reportWebVitals';
+import AuthReducers from "./component/reducers/AuthReducers";
+
+const store = createStore(
+  AuthReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Layout />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 

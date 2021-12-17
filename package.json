@@ -1,0 +1,24 @@
+{
+  "name": "pemograman-web-lanjut",
+  "version": "1.0.0",
+  "description": "Academic Calendar 2020-2021 \r Class of TI-19-KA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FebryFairuz/Pemograman-Web-Lanjut.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FebryFairuz/Pemograman-Web-Lanjut/issues"
+  },
+  "homepage": "https://github.com/FebryFairuz/Pemograman-Web-Lanjut#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.4.0"
+  }
+}

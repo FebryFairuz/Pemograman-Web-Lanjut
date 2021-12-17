@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavItem = (props) =>{
     return (
@@ -6,10 +7,10 @@ const NavItem = (props) =>{
         {(props.data) ? (
             props.data.map((v)=>(
                 <li className="nav-item px-1" title={v.name}>
-                    <a className="nav-link fs-4" href={v.url}>
+                    <Link className="nav-link fs-4" to={v.url}>
                         <i className={"fa "+v.icon}></i>
                         <span className="d-sm-none">{v.name}</span>
-                    </a>
+                    </Link>
                 </li>
             ))
         ) : ''}        

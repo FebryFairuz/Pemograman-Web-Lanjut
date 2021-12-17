@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState,useEffect}  from 'react';
+import {useDispatch} from 'react-redux';
+import { Route,Switch,Redirect } from "react-router-dom";
+import Layout from "./component/module/templates/Layout";
+import Signin from "./component/module/page/authentification";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const IsAuth = localStorage.getItem("AuthToken");
+    const dispatch = useDispatch();
+    const SignOutPage = ()=>{
+        dispatch({type:"SIGN_OUT"});
+    }
+
+    const PageNotFound = () =>{
+      return <h2>Page not found</h2>
+    }
+
+    return (
+      <Switch>  
+          {!IsAuth ? (
+              /*Render auth page when user at `/auth` and not authorized.*/              
+              <Route path="/sign-in" component={Signin}/>
+          ) : (
+              /*Otherwise redirect to root page (`/`)*/
+              <Redirect from="/sign-in" to="/"/>
+          )}
+
+          <Route path="/sign-out" component={SignOutPage}/>
+              
+          {!IsAuth ? (
+              /*Redirect to `/auth` when user is not authorized*/
+              <Redirect to="/sign-in"/>            
+          ) : (
+              <Layout />            
+          )}       
+          <Route component={PageNotFound}/>
+      </Switch> 
+    );
 }
 
 export default App;

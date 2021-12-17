@@ -35,9 +35,9 @@ class APIRequest extends CI_Controller {
                 $timestamp = strtotime($currDate) + 60*60; //1 jam
                 $expiredTime = date('Y-m-d H:i:s', $timestamp);
             	$isExist->Expired = $expiredTime;
-            	$result = array("return"=>true,"message"=>"Data ditemukan","result"=>$isExist);	
+            	$result = array("return"=>true,"message"=>"Wellcome ".$isExist->Username,"result"=>$isExist);	
             }else{
-            	$result = array("return"=>false,"message"=>"Data tidak ditemukan","result"=>null);
+            	$result = array("return"=>false,"message"=>"You have entered an invalid username or password.","result"=>null);
             }
 		}
 
