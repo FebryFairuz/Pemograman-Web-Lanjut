@@ -16,10 +16,6 @@ export default function Messages() {
     useEffect(() => {
         socketRef.current = io.connect('http://localhost:8000/');
     
-        // socketRef.current.on("your id", id => {
-        //   setYourID(id);
-        // })
-    
         socketRef.current.on("messageX", (message) => {
           receivedMessage(message);
         })
@@ -34,9 +30,8 @@ export default function Messages() {
         e.preventDefault();        
         const messageObject = {
           body: message,
-          id: AuthDecode.result.Username,
+          id: yourID,
         };
-        console.log(messageObject);
         setMessage("");
         socketRef.current.emit("send message", messageObject);
     }
