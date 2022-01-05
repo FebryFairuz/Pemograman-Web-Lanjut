@@ -1,6 +1,6 @@
 ## Source Code Materi Pemograman Web Lanjut & Lab
 
-Academic Calendar 2020-2021 
+Academic Calendar 2021-2022 Ganjil
 Class of TI-19-KA
 
 Institute Business and Informatics Kesatuan Bogor
